@@ -4,11 +4,11 @@ app:
     notify: apaul@ecloudcontrol.com
     
 build:
-    version: 7.0
+    version: 10.4
     env: PROD
     build_file: none
     output_files: output/*.zip
-    image_template: grafana-7.0
+    image_template: grafana-10.4
     
 deploy:
     context: alpha/PROD
@@ -28,7 +28,7 @@ volumes:
 properties:
     ADMIN_PASSWORD:     
        vault: ADMIN_PASSWORD
-    PROM_URL: http://prometheus-3-0.alpha-prod.svc.cluster.local:9090/
+    PROM_URL: http://prometheus-3-0:9090/
     GF_AUTH_GENERIC_OAUTH_ENABLED: true
     GF_AUTH_GENERIC_OAUTH_NAME: AppZ 
     GF_AUTH_GENERIC_OAUTH_CLIENT_ID: grafana
