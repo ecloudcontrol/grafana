@@ -16,7 +16,13 @@ deploy:
     replicas: 1
     port:
     - 3000
-
+    nodeSelector:
+      nodepool: toplist
+    tolerations:
+      - key: nodepool
+        operator: Equal
+        value: toplist
+        effect: NoSchedule
 volumes:
   - claim: grafana-data
     class: linode-block-storage
