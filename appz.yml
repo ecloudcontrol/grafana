@@ -14,8 +14,16 @@ deploy:
     context: alpha/PROD
     type: statefulset
     replicas: 1
+    imagePullPolicy: Always
     port:
     - 3000
+    nodeSelector:
+      nodepool: clickhouse
+    tolerations:
+      - key: nodepool
+        operator: Equal
+        value: clickhouse
+        effect: NoSchedule
 
 volumes:
   - claim: grafana-data
