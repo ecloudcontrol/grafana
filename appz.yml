@@ -1,14 +1,14 @@
 app:
     name: grafana
     code: Grafana
-    notify: apaul@ecloudcontrol.com
+    notify: kullas@maximaconsulting.com
     
 build:
-    version: 12.0
+    version: 10.4
     env: PROD
     build_file: none
     output_files: output/*.zip
-    image_template: grafana-12.0
+    image_template: grafana-10.4
     
 deploy:
     context: alpha/PROD
