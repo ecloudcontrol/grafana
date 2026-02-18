@@ -18,11 +18,11 @@ deploy:
     port:
     - 3000
     nodeSelector:
-      nodepool: clickhouse
+      nodepool: cloudorbit
     tolerations:
       - key: nodepool
         operator: Equal
-        value: clickhouse
+        value: cloudorbit
         effect: NoSchedule
 
 volumes:
