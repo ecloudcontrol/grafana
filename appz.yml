@@ -19,12 +19,9 @@ deploy:
 
 volumes:
   - claim: grafana-data
-    class: linode-block-storage
     mount: /appz/data
     name: data
     size: 5Gi
-    selector:
-    matchLabels: false
 
 properties:
     ADMIN_PASSWORD:     
